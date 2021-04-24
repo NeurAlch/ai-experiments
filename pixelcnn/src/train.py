@@ -1,14 +1,9 @@
+import os
 import tensorflow as tf
 from .data import get_data
 from .model import SimplePixelCnn
 
 def train_model():
-    check_callback = tf.keras.callbacks.ModelCheckpoint(
-        filepath="checkpoints/check.ckpt",
-        save_weights_only=True,
-        verbose=1
-    )
-
     pixel_cnn = SimplePixelCnn(
         hidden_features=64,
         output_features=64,
@@ -23,7 +18,7 @@ def train_model():
 
     ds_train, ds_test = get_data()
 
-    pixel_cnn.fit(ds_train, epochs=50, validation_data=ds_test, callbacks=[check_callback])
+    pixel_cnn.fit(ds_train, epochs=50, validation_data=ds_test)
     pixel_cnn.save('model/pixel_cnn')
 
     return pixel_cnn
