@@ -13,7 +13,7 @@ def train_model():
     pixel_cnn.compile(
         loss=tf.keras.losses.BinaryCrossentropy(),
         optimizer=tf.keras.optimizers.RMSprop(learning_rate=0.001),
-        metrics=[tf.keras.losses.BinaryCrossentropy()]
+        metrics=['accuracy']
     )
 
     ds_train, ds_test = get_data()

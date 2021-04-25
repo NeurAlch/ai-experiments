@@ -20,13 +20,15 @@ class MaskedConv2D(layers.Layer):
             self.filters
         ],
         initializer='glorot_normal',
-        trainable=True
+        trainable=True,
+        name='w'
     )
 
     self.b = self.add_weight(
         shape=(self.filters,),
         initializer='zeros',
-        trainable=True
+        trainable=True,
+        name='b'
     )
 
     mask = np.ones(self.kernel**2, dtype=np.float32)
