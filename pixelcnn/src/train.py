@@ -19,6 +19,6 @@ def train_model():
     ds_train, ds_test = get_data()
 
     pixel_cnn.fit(ds_train, epochs=50, validation_data=ds_test)
-    pixel_cnn.save('model/pixel_cnn')
+    pixel_cnn.save('model/pixel_cnn', overwrite=True)
 
     return pixel_cnn

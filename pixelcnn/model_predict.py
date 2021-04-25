@@ -27,4 +27,5 @@ for row in range(grid_row):
         i += 1
 
 f.tight_layout(pad=0.1, h_pad=0.2, w_pad=0.1)
+
 plt.savefig('test.png')
