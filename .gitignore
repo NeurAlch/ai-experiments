@@ -109,3 +109,6 @@ checkpoints
 # python
 __pycache__
 .ipynb_checkpoints
+
+# virtualenv
+venv
